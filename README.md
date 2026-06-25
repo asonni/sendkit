@@ -520,7 +520,7 @@ bun run release:check
 
 This script runs formatting checks, linting, typechecking, and all publishable package builds. Use `bun run build:core`, `bun run build:cli`, or `bun run build:local-mcp` when checking only one package build.
 
-Package builds run through `tsdown`, which produces native Node ESM output in `dist` for publishing while keeping source imports clean. `tsdown` requires Node.js 22.18.0 or newer at build time, but the emitted package output targets the supported Node runtime.
+Package JavaScript builds run through `tsdown`, while TypeScript declaration files are emitted with `tsc -p tsconfig.build.json`. This keeps native Node ESM output in `dist` for publishing while preserving JavaScript sourcemaps without triggering `rolldown-plugin-dts` sourcemap warnings. `tsdown` requires Node.js 22.18.0 or newer at build time, but the emitted package output targets the supported Node runtime.
 
 ### Git Commit Timing
 

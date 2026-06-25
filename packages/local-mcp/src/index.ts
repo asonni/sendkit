@@ -1,7 +1,10 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 
-import { telegramMessageInputSchema, sendTelegramMessage } from 'sendkit-core';
+import {
+  telegramMessageInputSchema,
+  sendTelegramMessage
+} from '@asonni-dev/sendkit-core';
 
 const server = new McpServer({
   name: 'sendkit-local',
