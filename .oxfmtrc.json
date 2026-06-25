@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "ignorePatterns": [
+    "bun.lock",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "node_modules",
+    "dist"
+  ],
+  "singleQuote": true,
+  "trailingComma": "none",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "semi": true,
+  "arrowParens": "avoid"
+}
