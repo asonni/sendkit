@@ -1,6 +1,7 @@
-import { Command } from 'commander';
+#!/usr/bin/env node
 import { z } from 'zod';
 import { homedir } from 'node:os';
+import { Command } from 'commander';
 import { dirname, join } from 'node:path';
 import { sendTelegramMessage } from '@asonni-dev/sendkit-core';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';

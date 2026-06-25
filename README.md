@@ -500,6 +500,8 @@ If core changed, bump `packages/core/package.json` first:
 
 Leave the CLI and local MCP dependency on core as `workspace:*`. `bun publish` resolves `workspace:*` to the bumped core version at publish time, so you never hand-edit dependency ranges or risk shipping a `workspace:*` range to npm.
 
+After bumping any workspace package version, update and commit the matching workspace version entries in `bun.lock` before packing or publishing. Bun reads those workspace versions when it rewrites `workspace:*` during `bun pm pack` and `bun publish`, so stale `0.0.0` lockfile metadata can leak into the published manifest even when `package.json` already has the correct version.
+
 If the CLI changed, bump `packages/cli/package.json` and keep the CLI's displayed version in `packages/cli/src/index.ts` in sync with it.
 
 If the local MCP server changed, bump `packages/local-mcp/package.json` and keep the MCP server version in `packages/local-mcp/src/index.ts` in sync with it.
